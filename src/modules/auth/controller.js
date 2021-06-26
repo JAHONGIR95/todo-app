@@ -26,14 +26,13 @@ const POST_LOGIN = (req, res) => {
     let {username, password} = req.body;
     let users = require('../../database/users.json');
     let found = users.find(user => user.username === username && user.password === password);
-    console.log(found);
     if(!found){
        return  res.json({
             message: "Username or password incored"
        });
     }
     res.cookie('token', jwt.sign(found.id, 'SECRET_KEY'))
-    res.send("<a href='/'>Home</a>")
+    res.send('<a href="/">Home</a>')
 }
 
 const GET = (req, res) => {

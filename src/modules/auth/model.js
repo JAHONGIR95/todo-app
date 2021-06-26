@@ -31,21 +31,6 @@ const insert = ({ username, email, password }) => {
     }
 }
 
-// const checkLogin = ({ username, password }) => {
-//     try{
-        
-//         let users = fs.readFileSync(path.join(process.cwd(), 'src', 'database', 'users.json'), 'utf-8')
-//         users = users ? JSON.parse(users) : [];
-//         let found = users.find(user => user.username == username && user.password == password)
-//         if(found){
-//             return found
-//         } else return
-//     } catch(error){
-//         console.log(error)
-//     }
-// }
-
 module.exports = {
-    insert,
-    // checkLogin
+    insert
 }

@@ -2,15 +2,12 @@ const model = require('./model.js')
 const jwt = require('jsonwebtoken')
 const fs = require('fs')
 const path = require('path')
-// const { resolveSoa } = require('dns')
 
 const GET = (req, res) => {
     let payload = jwt.verify(req.cookies.token, 'SECRET_KEY')
-
     let users = fs.readFileSync(path.join(process.cwd(), 'src', 'database', 'users.json'), 'utf-8')
     users = users ? JSON.parse(users) : []
     let found = users.find( el => el.id == payload)
-    console.log(found)
     if(found){
         if(found.permission.read == true){
             return res.status(200).json(model.fetchAll())
@@ -20,7 +17,6 @@ const GET = (req, res) => {
 const POST = (req, res) => {
     try{
         let payload = jwt.verify(req.cookies.token, 'SECRET_KEY')
-    
         let users = fs.readFileSync(path.join(process.cwd(), 'src', 'database', 'users.json'), 'utf-8')
         users = users ? JSON.parse(users) : []
         let found = users.find( el => el.id == payload)
@@ -41,11 +37,9 @@ const POST = (req, res) => {
 
 const DELETE = (req, res) => {
     let payload = jwt.verify(req.cookies.token, 'SECRET_KEY')
-
     let users = fs.readFileSync(path.join(process.cwd(), 'src', 'database', 'users.json'), 'utf-8')
     users = users ? JSON.parse(users) : []
     let found = users.find( el => el.id == payload)
-    console.log(found)
     if(found){
         if(found.permission.remove == true){
             let response = model.remove(req.body)
@@ -64,7 +58,6 @@ const UPDATE = (req, res) => {
     let users = fs.readFileSync(path.join(process.cwd(), 'src', 'database', 'users.json'), 'utf-8')
     users = users ? JSON.parse(users) : []
     let found = users.find( el => el.id == payload)
-    console.log(found)
     if(found){
         if(found.permission.change == true){
             let response = model.update(req.body)

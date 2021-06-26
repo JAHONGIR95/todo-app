@@ -9,4 +9,5 @@ router.route('/admin')
 router.route('/users')
     .get(admin, GET_USERS)
     .put(admin, UPDATE)
+    
 module.exports = router
