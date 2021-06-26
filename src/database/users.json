@@ -1,0 +1,54 @@
+[
+    {
+        "id": 1,
+        "username": "Jahongir",
+        "email": "jah@gaha.com",
+        "password": "1111",
+        "isAdmin": true,
+        "permission": {
+            "read": true,
+            "add": false,
+            "remove": false,
+            "change": true
+        }
+    },
+    {
+        "id": 2,
+        "username": "khasan",
+        "email": "jakhongirsagdullaev95@gmail.com",
+        "password": "1111",
+        "isAdmin": true,
+        "permission": {
+            "read": true,
+            "add": true,
+            "remove": true,
+            "change": true
+        }
+    },
+    {
+        "id": 3,
+        "username": "Sultan",
+        "email": "jah@gaha.com",
+        "password": "1111",
+        "isAdmin": false,
+        "permission": {
+            "read": true,
+            "add": false,
+            "remove": false,
+            "change": false
+        }
+    },
+    {
+        "id": 4,
+        "username": "donishmand",
+        "email": "onlinecourses1999@gmail.com",
+        "password": "1111",
+        "isAdmin": false,
+        "permission": {
+            "read": true,
+            "add": true,
+            "remove": false,
+            "change": true
+        }
+    }
+]
