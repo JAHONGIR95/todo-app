@@ -50,5 +50,31 @@
             "remove": false,
             "change": true
         }
+    },
+    {
+        "id": 5,
+        "username": "bumen",
+        "email": "jah@gaha.com",
+        "password": "1234",
+        "isAdmin": false,
+        "permission": {
+            "read": true,
+            "add": false,
+            "remove": false,
+            "change": false
+        }
+    },
+    {
+        "id": 6,
+        "username": "haha",
+        "email": "jah@gaha.com",
+        "password": "1414",
+        "isAdmin": false,
+        "permission": {
+            "read": true,
+            "add": false,
+            "remove": false,
+            "change": false
+        }
     }
 ]

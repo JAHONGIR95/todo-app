@@ -4,7 +4,6 @@ function admin (req, res, next){
     try{
         if(req.cookies.token){
             let payload = jwt.verify(req.cookies.token, 'SECRET_KEY')
-            console.log(payload)
             let users = require('../database/users.json')
             let found = users.find( user => user.id == payload)
             if(found.isAdmin){

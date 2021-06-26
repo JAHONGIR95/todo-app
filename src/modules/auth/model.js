@@ -24,7 +24,7 @@ const insert = ({ username, email, password }) => {
             }
             users.push(newUser)
             fs.writeFileSync(path.join(process.cwd(), 'src', 'database', 'users.json'), JSON.stringify(users, null, 4))
-            return JSON.stringify(newUser.id)
+            return newUser
         } else return
     } catch(error){
         console.log( error )

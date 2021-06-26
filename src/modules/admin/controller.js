@@ -7,7 +7,6 @@ const GET = (req, res) => {
 
 const GET_USERS = (req, res) => {
     let response = model.getUsers()
-    console.log(response);
     if(response){
         res.json( response )   
     } else throw 'error'

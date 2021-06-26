@@ -4,11 +4,11 @@ const { checkTokenExists2 } = require('../../lib/authSettings.js')
 
 router.route('/register')
     .get(checkTokenExists2, GET_REGISTER)
-    .post(POST_REGISTER)
+    .post(checkTokenExists2, POST_REGISTER)
 
 router.route('/login')
     .get(checkTokenExists2, GET_LOGIN)
-    .post(POST_LOGIN)
+    .post(checkTokenExists2, POST_LOGIN)
 
 router.route('/logout')
     .get(GET)

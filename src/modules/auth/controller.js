@@ -9,7 +9,8 @@ const GET_REGISTER = (req, res) => {
 const POST_REGISTER = (req, res) => {
     let response = model.insert(req.body)
     if(response){
-        res.cookie('token', jwt.sign(response, 'SECRET_KEY'))
+        res.cookie('token', jwt.sign(response.id, 'SECRET_KEY'))
+        res.cookie('username', response.username)
         res.send('<a href="/">home</a>')
         res.json(response)
     } else {
@@ -32,11 +33,12 @@ const POST_LOGIN = (req, res) => {
        });
     }
     res.cookie('token', jwt.sign(found.id, 'SECRET_KEY'))
+    res.cookie('username', found.username)
     res.send('<a href="/">Home</a>')
 }
 
 const GET = (req, res) => {
-    res.clearCookie('token')
+    res.clearCookie('token', 'username')
     res.redirect('/login')
 }
 
